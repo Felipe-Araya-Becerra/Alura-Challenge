@@ -4,11 +4,15 @@
 *{
     margin: 0;
     padding: 0;
+    
 }
 
 body{
     text-align: center;
+    max-width: 1440px;
+    max-height: 1024px;
     height: 100dvh;
+    box-sizing: border-box;
 }
 
 nav{
@@ -33,6 +37,7 @@ nav{
 
 .output{
     width: 40%;
+    position: relative;
 }
 
 textarea{
@@ -44,7 +49,7 @@ textarea{
 .placeholder-content{
     position: absolute;
     top: 50%;
-    left: 84%;
+    left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: #888;
