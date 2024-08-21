@@ -7,25 +7,36 @@
     <title>Encriptador y Desencriptador de Texto</title>
   </head>
   <body>
-    <h1>Encriptador y Desencriptador de Texto</h1>
+    <nav>
+      <img src="assets/logo.svg" alt="">
+    </nav>
     <div class="container">
       <section class="input">
         <textarea
           id="inputText"
           placeholder="Ingresa el texto aquí..."
+          
         ></textarea>
-        <div>
-          <button onclick="encriptarTexto()">Encriptar</button>
-          <button onclick="desencriptarTexto()">Desencriptar</button>
+        <div class="warningText">
+          <img src="assets/exclamation-circle-fill.svg" alt="">
+          Solo letras minúsculas y sin acentos
+        </div>
+        <div class="buttons">
+          <button onclick="encriptarTexto()" class="btn btnEncriptar">Encriptar</button>
+          <button onclick="desencriptarTexto()" class="btn btnDesencriptar">Desencriptar</button>
         </div>
       </section>
       <section class="output">
         <textarea
           id="outputText"
-          placeholder="Texto resultado..."
           readonly
         ></textarea>
-        <button onclick="copiarTexto()">Copiar</button>
+        <div class="placeholder-content">
+          <img src="assets/dummy.svg" alt="Imagen descriptiva">
+          <h3>Ningún mensaje fue encontrado</h3>
+          <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+      </div>
+        <button onclick="copiarTexto()" class="btn btnCopiar" id="btnCopiar">Copiar</button>
       </section>
     </div>
     <script src="script.js"></script>

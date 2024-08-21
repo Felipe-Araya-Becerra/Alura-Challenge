@@ -16,6 +16,7 @@ function encriptarTexto() {
   }
 
   document.getElementById("outputText").value = outputText;
+  toggleButton()
 }
 
 function desencriptarTexto() {
@@ -36,12 +37,47 @@ function desencriptarTexto() {
   }
 
   document.getElementById("outputText").value = outputText;
+  toggleButton()
 }
 
 function copiarTexto() {
   let outputText = document.getElementById("outputText");
   outputText.select();
-  outputText.setSelectionRange(0, 9999);
+  outputText.setSelectionRange(0, 99999); 
   document.execCommand("copy");
-  alert("Texto copiado: " + outputText.value);
+  alert("Texto copiado!!");
+  outputText.value = ""
 }
+
+function handlePlaceholderChange(e) {
+  const input = document.getElementById('outputText');
+  if (e.matches) {
+      input.placeholder = "Ningun mensaje fue encontrado";
+  }else{
+    input.placeholder = ''
+  }
+}
+
+// Define la media query (por ejemplo, para pantallas de menos de 768px de ancho)
+const mediaQuery = window.matchMedia("(max-width: 768px) and (max-height: 1174px)");
+
+// Adjunta la función manejadora al evento de cambio de la media query
+mediaQuery.addEventListener('change', handlePlaceholderChange);
+
+// Ejecuta la función al cargar la página para establecer el placeholder correcto
+handlePlaceholderChange(mediaQuery);
+
+
+ // Selecciona el textarea y el botón
+ const textarea = document.getElementById('outputText');
+ const button = document.getElementById('btnCopiar');
+
+ function toggleButton() {
+  if (textarea.value.trim() !== "") {
+      button.style.display = 'block'; // Muestra el botón
+  } else {
+      button.style.display = 'none'; // Oculta el botón
+  }
+}
+
+ console.log(textarea.value)
