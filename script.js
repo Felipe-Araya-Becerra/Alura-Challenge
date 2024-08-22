@@ -58,17 +58,17 @@ function handlePlaceholderChange(e) {
   }
 }
 
-// Define la media query (por ejemplo, para pantallas de menos de 768px de ancho)
+
 const mediaQuery = window.matchMedia("(max-width: 768px) and (max-height: 1174px)");
 
-// Adjunta la función manejadora al evento de cambio de la media query
+
 mediaQuery.addEventListener('change', handlePlaceholderChange);
 
-// Ejecuta la función al cargar la página para establecer el placeholder correcto
+
 handlePlaceholderChange(mediaQuery);
 
 
- // Selecciona el textarea y el botón
+
  const textarea = document.getElementById('outputText');
  const button = document.getElementById('btnCopiar');
 
